@@ -3,9 +3,11 @@ const app = express();
 const {port} = require('./config')
 const apiRoter = require('./routes/api');
 
+//db connection
+require('./db/mongoose')
 
 //routes
-app.use('/',apiRoter);
+//app.use('/',apiRoter);
 
 
 //server
