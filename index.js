@@ -7,7 +7,7 @@ const apiRoter = require('./routes/api');
 require('./db/mongoose')
 
 //routes
-//app.use('/',apiRoter);
+app.use('/',apiRoter);
 
 
 //server

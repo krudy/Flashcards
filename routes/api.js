@@ -2,8 +2,8 @@ const express = require('express');
 const router = express.Router();
 
 
-const testActions = require('../actions/api/test');
+const flashcardActions = require('../actions/api/flashcards');
 
-router.get('/', testActions.homepage);
+router.get('/', flashcardActions.saveFlashcard);
 
 module.exports = router;
