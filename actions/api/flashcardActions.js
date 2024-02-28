@@ -2,20 +2,14 @@ const Word = require('../../db/models/flashcard');
 
 class FlashcardActions {
     saveFlashcard(req, res) {
+        const polishWord = req.body.polishWord;
+           const englishWord = req.body.englishWord;
+           const type = req.body.type;  
+           const polishExample = req.body.polishExample;
+           const englishExample = req.body.englishExample;    
+        
 
-        const newWord = new Word({
-            polishWord: 'jabłko555',
-            englishWord: 'apple555',
-            type: 'noun',
-            polishExample: 'Mark je jabłko',
-            englishExample: 'Mark is eating an apple'
-        });
-
-        newWord.save().then(() => {
-            console.log('word has been added successfully');
-        });
-
-        res.send('word has been added successfully');
+        res.send(`word has been added successfully PL ${polishWord} EN ${englishWord} type ${type}`);
     }
 
     getAllFlashcards(req, res) {
