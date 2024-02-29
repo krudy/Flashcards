@@ -1,15 +1,26 @@
 const Flashcard = require('../../db/models/flashcard');
 
 class FlashcardActions {
-    saveFlashcard(req, res) {
+
+    async saveFlashcard(req, res) {
         const polishWord = req.body.polishWord;
         const englishWord = req.body.englishWord;
         const type = req.body.type;
         const polishExample = req.body.polishExample;
         const englishExample = req.body.englishExample;
 
+        const newFlashcard = new Flashcard({
+            polishWord: polishWord,
+            englishWord: englishWord,
+            type: type,
+            polishExample: polishExample,
+            englishExample: englishExample
+        })
 
-        res.send(`word has been added successfully PL ${polishWord} EN ${englishWord} type ${type}`);
+        await newFlashcard.save();
+
+
+        res.status(200).json(newFlashcard);
     }
 
     async getAllFlashcards(req, res) {
@@ -29,7 +40,7 @@ class FlashcardActions {
             const randomIndex = Math.floor(Math.random() * count);
             const randomWord = await Flashcard.findOne().skip(randomIndex);
             
-            res.json(randomWord);
+            res.status(200).json(randomWord);
         } catch (err) {
             console.error(err);
             res.status(500).send('Internal Server Error');
