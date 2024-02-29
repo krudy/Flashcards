@@ -23,8 +23,17 @@ class FlashcardActions {
         res.status(200).json(docs);
     }
 
-    getRandomFlashcard(req, res) {
-        res.send('..')
+    async getRandomFlashcard(req, res) {
+        try {
+            const count = await Flashcard.countDocuments();
+            const randomIndex = Math.floor(Math.random() * count);
+            const randomWord = await Flashcard.findOne().skip(randomIndex);
+            
+            res.json(randomWord);
+        } catch (err) {
+            console.error(err);
+            res.status(500).send('Internal Server Error');
+        }
     }
 }
 
