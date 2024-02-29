@@ -9,15 +9,24 @@ class FlashcardActions {
         const polishExample = req.body.polishExample;
         const englishExample = req.body.englishExample;
 
-        const newFlashcard = new Flashcard({
-            polishWord: polishWord,
-            englishWord: englishWord,
-            type: type,
-            polishExample: polishExample,
-            englishExample: englishExample
-        })
 
-        await newFlashcard.save();
+        let newFlashcard;
+
+        try {
+            newFlashcard = new Flashcard({
+                polishWord: polishWord,
+                englishWord: englishWord,
+                type: type,
+                polishExample: polishExample,
+                englishExample: englishExample
+            })
+            await newFlashcard.save();
+            
+        } catch (error) {
+            return res.status(422).json({message: error.message});
+        }
+        
+
 
 
         res.status(200).json(newFlashcard);
