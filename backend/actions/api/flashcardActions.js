@@ -26,9 +26,6 @@ class FlashcardActions {
             return res.status(422).json({message: error.message});
         }
         
-
-
-
         res.status(200).json(newFlashcard);
     }
 
