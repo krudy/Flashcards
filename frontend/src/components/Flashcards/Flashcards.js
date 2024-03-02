@@ -4,9 +4,9 @@ import Flashcard from './Flashcard/Flashcard';
 
 class Flashcards extends React.Component {
 
-    render() {
-
-        const flashcards = [
+    constructor(props) {
+        super(props);
+        this.flashcards = [
             {
                 id: 1234,
                 polishWord: 'kot',
@@ -24,6 +24,10 @@ class Flashcards extends React.Component {
                 englishExample: 'Maja has a dog'
             }
         ]
+    }
+
+    render() {
+
 
 
 
@@ -33,7 +37,7 @@ class Flashcards extends React.Component {
                 <h1>Flashcards</h1>
 
                 <div className='flashcardsContainer'>
-                    {flashcards.map(flashcard => {
+                    {this.flashcards.map(flashcard => {
                         return (
                            <Flashcard 
                             polishWord={flashcard.polishWord}
