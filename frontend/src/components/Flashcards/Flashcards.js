@@ -1,34 +1,48 @@
 import React from 'react';
 import './Flashcards.css';
+import Flashcard from './Flashcard/Flashcard';
 
 class Flashcards extends React.Component {
 
     render() {
+
+        const flashcards = [
+            {
+                id: 1234,
+                polishWord: 'kot',
+                englishWord: 'cat',
+                type: 'noun',
+                polishExample: 'Ania ma kota',
+                englishExample: 'Ania has a cat'
+            },
+            {
+                id: 1235,
+                polishWord: 'pies',
+                englishWord: 'dog',
+                type: 'noun',
+                polishExample: 'Maja ma psa',
+                englishExample: 'Maja has a dog'
+            }
+        ]
+
+
+
         return (
             <div>
 
                 <h1>Flashcards</h1>
-            
-            <div className='flashcardsContainer'>
 
-                <div className='flashcard'>
-                    <p>kot</p>
-                    <div className='polishExample'>
-                        Ania ma kota
-                    </div>
-                    <input type='text' className='inputWord'></input>
-                    <button className='Check'>Check</button>
-                </div>
+                <div className='flashcardsContainer'>
+                    {flashcards.map(flashcard => {
+                        return (
+                           <Flashcard 
+                            polishWord={flashcard.polishWord}
+                            polishExample={flashcard.polishExample}
+                            type={flashcard.type}/>
+                        )
+                    })}
 
-                <div className='flashcard'>
-                    <p>pies</p>
-                    <div className='polishExample'>
-                        Maja ma psa
-                    </div>
-                    <input type='text' className='inputWord'></input>
-                    <button className='Check'>Check</button>
                 </div>
-            </div>
             </div>
         );
     }
