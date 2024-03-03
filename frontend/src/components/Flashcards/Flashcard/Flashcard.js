@@ -3,10 +3,22 @@ import React, {useState} from "react";
 function Flashcard(props) {
 
    const [showTranslation, setShowTranslation] = useState(false);
+   const [inputText, setInputText] = useState('');
+   const [isCheckButtonEnabled, setIsCheckButtonEnabled] = useState(true);
+
 
    const toggleTranslation = () =>{
-    setShowTranslation(!showTranslation);
+    setShowTranslation(true);
+    if(inputText === props.englishWord){
+        console.log('won');
+    }
+    setIsCheckButtonEnabled(false); 
    }
+
+   //updates the value of the inputword in real time
+   const handleInputChange = (event) => {
+    setInputText(event.target.value);
+  }
 
     return (
         <div className='flashcard'>
@@ -15,10 +27,15 @@ function Flashcard(props) {
         {showTranslation && (<p><strong>{props.englishWord}</strong></p>)}
         <div className='polishExample'>{props.polishExample}</div>
         {showTranslation && (<p><strong>{props.englishExample}</strong></p>)}
-        <input type='text' className='inputWord'></input>
+        <input 
+            type='text' 
+            className='inputWord'
+            value={inputText}
+            onChange={handleInputChange}></input>
         <button 
             className='Check' 
-            onClick={toggleTranslation}>Check</button>
+            onClick={toggleTranslation}
+            disabled={!isCheckButtonEnabled}>Check</button>
     </div>
     );
 }
