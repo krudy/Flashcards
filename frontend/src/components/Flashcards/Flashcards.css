@@ -1,9 +1,14 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
 .flashcardsContainer {
     display: flex;
     justify-content: center;
 }
 
-.flashcard {
+.flashcard { 
     width: 30%;
     padding: 10px;
     border: 3px solid green;

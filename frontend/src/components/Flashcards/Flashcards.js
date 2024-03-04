@@ -38,6 +38,10 @@ class Flashcards extends React.Component {
         
     }
 
+    AddFlashcard(flashcard) {
+        
+    }
+
     render() {
 
 
