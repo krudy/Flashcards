@@ -1,6 +1,7 @@
 import React from 'react';
 import './Flashcards.css';
 import Flashcard from './Flashcard/Flashcard';
+import NewFlashcard  from './NewFlashcard/NewFlashcard';
 
 class Flashcards extends React.Component {
 
@@ -46,6 +47,8 @@ class Flashcards extends React.Component {
             <div>
 
                 <h1>Flashcards</h1>
+
+                <NewFlashcard/>
 
                 <div className='flashcardsContainer'>
                     {this.state.flashcards.map(flashcard => {

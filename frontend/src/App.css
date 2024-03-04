@@ -13,6 +13,21 @@
   }
 }
 
+input{
+  display: block;
+  width: 70%;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius:.25rem;
+  margin: auto;
+
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
