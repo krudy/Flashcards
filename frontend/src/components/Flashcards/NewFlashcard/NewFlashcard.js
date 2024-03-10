@@ -33,6 +33,18 @@ function  NewFlashcard(props) {
         setEnglishExample(value);
     }
 
+    const AddFlashcard = () => {
+        const flashcard ={
+            polishWord: polishWord,
+            englishWord: englishWord,
+            polishExample: polishExample,
+            englishExample: englishExample,
+            type: type
+            
+        }
+        props.onAdd(flashcard)
+    }
+
     return(
         <div className="flashcard">
             <label>word in Polish</label>
@@ -70,7 +82,7 @@ function  NewFlashcard(props) {
                 onChange={changeEnglishExamplehandler}
             ></input>
 
-            <button>Add this flashcard</button>
+            <button onClick={AddFlashcard}>Add this flashcard</button>
         </div>
     );
 }

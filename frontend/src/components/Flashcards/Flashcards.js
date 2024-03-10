@@ -37,8 +37,8 @@ class Flashcards extends React.Component {
         
     }
 
-    AddFlashcard(flashcard) {
-
+    async AddFlashcard(flashcard) {
+       await axios.post('http://localhost:9999/api/flashcards', flashcard);
     }
 
     render() {
@@ -51,20 +51,21 @@ class Flashcards extends React.Component {
 
                 <h1>Flashcards</h1>
 
-                <NewFlashcard/>
+                <NewFlashcard
+                    onAdd={(flashcard) => this.AddFlashcard(flashcard)}/>
 
                 <div className='flashcardsContainer'>
                     {this.state.flashcards.map(flashcard => {
                         return (
                            <Flashcard 
-                            key={flashcard.id}
+                            key={flashcard._id}
                             id={flashcard.id}
                             polishWord={flashcard.polishWord}
                             englishWord={flashcard.englishWord}
                             polishExample={flashcard.polishExample}
                             englishExample={flashcard.englishExample}
                             type={flashcard.type}
-                            //onCheckClick = {(id) => this.CheckFlashcard(id)}
+                            
                             />
 
                         )
