@@ -2,6 +2,7 @@ import React from 'react';
 import './Flashcards.css';
 import Flashcard from './Flashcard/Flashcard';
 import NewFlashcard  from './NewFlashcard/NewFlashcard';
+import axios from 'axios';
 
 class Flashcards extends React.Component {
 
@@ -10,27 +11,25 @@ class Flashcards extends React.Component {
 
         this.state = {
             
-            flashcards: [
-                {
-                    id: 1234,
-                    polishWord: 'kot',
-                    englishWord: 'cat',
-                    type: 'noun',
-                    polishExample: 'Ania ma kota',
-                    englishExample: 'Ania has a cat'
-                },
-                {
-                    id: 1235,
-                    polishWord: 'pies',
-                    englishWord: 'dog',
-                    type: 'noun',
-                    polishExample: 'Maja ma psa',
-                    englishExample: 'Maja has a dog'
-                }
-            ]
+            flashcards: []
         }
 
         
+    }
+
+    componentDidMount() {
+        this.fetchNotes();
+    }
+
+    async fetchNotes() {
+      
+    const cards = [];
+    for(let i = 0; i < 2; i++) {
+        const res =  await axios.get('http://localhost:9999/api/flashcards/random');
+        const card = res.data;
+        cards.push(card);
+    }
+      this.setState({flashcards: cards});
     }
 
     CheckFlashcard(id) {
@@ -39,7 +38,7 @@ class Flashcards extends React.Component {
     }
 
     AddFlashcard(flashcard) {
-        
+
     }
 
     render() {
