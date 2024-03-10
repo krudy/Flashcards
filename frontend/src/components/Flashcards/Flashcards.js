@@ -72,6 +72,7 @@ class Flashcards extends React.Component {
                     })}
 
                 </div>
+                <button className='Next'>NEXT</button>
             </div>
         );
     }

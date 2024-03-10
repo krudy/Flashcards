@@ -2,6 +2,7 @@ import React, {useState} from "react";
 
 function  NewFlashcard(props) {
 
+    const [showForm, setShowForm] = useState(false)
     const [polishWord, setPolishWord] = useState('');
     const [englishWord, setEnglishWord] = useState('');
     const [type, setType] = useState('');
@@ -43,9 +44,18 @@ function  NewFlashcard(props) {
             
         }
         props.onAdd(flashcard)
+
+        setPolishWord('');
+        setEnglishWord('');
+        setType('');
+        setPolishExample('');
+        setEnglishExample('');
+
+        
     }
 
     return(
+        showForm ? (
         <div className="flashcard">
             <label>word in Polish</label>
             <input 
@@ -83,7 +93,11 @@ function  NewFlashcard(props) {
             ></input>
 
             <button onClick={AddFlashcard}>Add this flashcard</button>
+            <button onClick={() => setShowForm(false)}>Cancel</button>
         </div>
+        ) : (
+           <button onClick={() => setShowForm(true)}>Add your Flashcard</button> 
+        )
     );
 }
 

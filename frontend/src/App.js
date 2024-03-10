@@ -8,7 +8,7 @@ function App() {
 
       <Flashcards />
 
-    <button className='Next'>NEXT</button>
+    
     </div>
   )
 }
