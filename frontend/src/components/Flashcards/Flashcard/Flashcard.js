@@ -11,6 +11,9 @@ function Flashcard(props) {
     setShowTranslation(true);
     if(inputText === props.englishWord){
         console.log('won');
+        // send info aboot correct answer to Flashcards
+        props.onCheck(true);  
+
     }
     setIsCheckButtonEnabled(false); 
    }

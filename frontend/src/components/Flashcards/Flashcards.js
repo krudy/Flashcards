@@ -11,7 +11,8 @@ class Flashcards extends React.Component {
 
         this.state = {
             
-            flashcards: []
+            flashcards: [],
+            points: 0
         }
 
         
@@ -32,9 +33,11 @@ class Flashcards extends React.Component {
       this.setState({flashcards: cards});
     }
 
-    CheckFlashcard(id) {
-        console.log('cheking card');
-        
+    CheckFlashcard(id, isCorrect) {
+        if (isCorrect) {
+            this.setState(prevState => ({ points: prevState.points + 1 }));
+        }
+        console.log('Checking card');
     }
 
     async AddFlashcard(flashcard) {
@@ -51,8 +54,11 @@ class Flashcards extends React.Component {
 
                 <h1>Flashcards</h1>
 
+
                 <NewFlashcard
                     onAdd={(flashcard) => this.AddFlashcard(flashcard)}/>
+
+                    <p className='points'>Points: {this.state.points}</p>
 
                 <div className='flashcardsContainer'>
                     {this.state.flashcards.map(flashcard => {
@@ -65,8 +71,8 @@ class Flashcards extends React.Component {
                             polishExample={flashcard.polishExample}
                             englishExample={flashcard.englishExample}
                             type={flashcard.type}
+                            onCheck={(isCorrect) => this.CheckFlashcard(flashcard.id, isCorrect)} />
                             
-                            />
 
                         )
                     })}
