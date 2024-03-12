@@ -44,6 +44,10 @@ class Flashcards extends React.Component {
        await axios.post('http://localhost:9999/api/flashcards', flashcard);
     }
 
+    handleNextButton() {
+        this.fetchNotes();
+    }
+
     render() {
 
 
@@ -78,7 +82,7 @@ class Flashcards extends React.Component {
                     })}
 
                 </div>
-                <button className='Next'>NEXT</button>
+                <button onClick={() => this.handleNextButton()} className='Next'>NEXT</button>
             </div>
         );
     }
