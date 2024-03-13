@@ -12,32 +12,38 @@ class Flashcards extends React.Component {
         this.state = {
             
             flashcards: [],
-            points: 0
+            points: 0,
+            game: 0
         }
 
         
     }
 
+    
     componentDidMount() {
-        this.fetchNotes();
+        this.fetchNotes();     
     }
-
-    async fetchNotes() {
-      
+    
+    async fetchNotes() {  
     const cards = [];
     for(let i = 0; i < 2; i++) {
         const res =  await axios.get('http://localhost:9999/api/flashcards/random');
         const card = res.data;
+        card.isCorrect = false; 
         cards.push(card);
     }
       this.setState({flashcards: cards});
     }
 
-    CheckFlashcard(id, isCorrect) {
+    
+
+    CheckFlashcard(isCorrect) {
         if (isCorrect) {
             this.setState(prevState => ({ points: prevState.points + 1 }));
+            this.setState(prevState => ({ game: prevState.game + 1}));
+            
         }
-        console.log('Checking card');
+        
     }
 
     async AddFlashcard(flashcard) {
@@ -45,7 +51,14 @@ class Flashcards extends React.Component {
     }
 
     handleNextButton() {
-        this.fetchNotes();
+        
+        this.setState({ flashcards: [] }); // Wyczyść istniejące fiszki z stanu
+        this.fetchNotes(); // Pobierz nowe fiszki
+        if(this.state.game === 2){
+            this.setState(prevState => ({ points: prevState.points + 1 }));
+        }
+        this.setState({ game: 0});
+        
     }
 
     render() {
@@ -66,17 +79,19 @@ class Flashcards extends React.Component {
 
                 <div className='flashcardsContainer'>
                     {this.state.flashcards.map(flashcard => {
+                       
                         return (
                            <Flashcard 
                             key={flashcard._id}
-                            id={flashcard.id}
+                            id={flashcard._id}
                             polishWord={flashcard.polishWord}
                             englishWord={flashcard.englishWord}
                             polishExample={flashcard.polishExample}
                             englishExample={flashcard.englishExample}
                             type={flashcard.type}
-                            onCheck={(isCorrect) => this.CheckFlashcard(flashcard.id, isCorrect)} />
-                            
+                            onCheck={(isCorrect) => this.CheckFlashcard(flashcard._id, isCorrect)} 
+                            bonus={flashcard.bonus}
+                            />
 
                         )
                     })}
