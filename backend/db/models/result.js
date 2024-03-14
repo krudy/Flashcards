@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const LeaderboardSchema = new mongoose.Schema({
+const ResultSchema = new mongoose.Schema({
     nickname:
     {
         type: String,
@@ -14,6 +14,6 @@ const LeaderboardSchema = new mongoose.Schema({
     
 })
 
-const Leaderboard = mongoose.model('Leaderboard', LeaderboardSchema)
+const Result = mongoose.model('Result', ResultSchema)
 
-module.exports = Leaderboard;
+module.exports = Result;
