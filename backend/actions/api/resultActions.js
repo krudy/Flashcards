@@ -46,7 +46,7 @@ class ResultActions {
     }
 
     // deleting a single note
-    async deleteNote(req, res) {
+    async deleteResult(req, res) {
         const id = req.params.id;
         await Result.deleteOne({_id: id});
         res.sendStatus(204);
