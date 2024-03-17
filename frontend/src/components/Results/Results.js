@@ -1,5 +1,5 @@
 import React from 'react';
-//import Result from './Result/Result';
+import Result from './Result/Result';
 import axios from 'axios';
 
 class Results extends React.Component {
@@ -28,11 +28,6 @@ class Results extends React.Component {
     this.setState({results: results});
     }
 
-    
-
-    // async AddFlashcard(flashcard) {
-    //    await axios.post('http://localhost:9999/api/flashcards', flashcard);
-    // }
 
 
     render() {
@@ -42,7 +37,19 @@ class Results extends React.Component {
 
         return (
             <div>
-                        <p>testowo</p>  
+                         {this.state.results.map(result => {
+                       
+                       return (
+                          <Result
+                           key={result._id}
+                           id={result._id}
+                           nickname={result.nickname}
+                           score={result.score}
+                          
+                           />
+
+                       )
+                   })}
             </div>
         );
     }
