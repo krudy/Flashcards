@@ -16,7 +16,8 @@ class Flashcards extends React.Component {
             
             flashcards: [],
             points: 0,
-            game: 0
+            game: 0,
+            gameOver: false
         }
 
         
@@ -57,10 +58,13 @@ class Flashcards extends React.Component {
         
         if (this.state.game === 0 ) {
             this.nextButtonRef.current.disabled = true;
+            this.setState({ gameOver: true });
             return;
         }
-        this.setState({ flashcards: [] }); // Wyczyść istniejące fiszki z stanu
-        this.fetchNotes(); // Pobierz nowe fiszki
+        // clear flashcards state
+        this.setState({ flashcards: [] }); 
+        // get new flashcards
+        this.fetchNotes(); 
         if(this.state.game === 2){
             this.setState(prevState => ({ points: prevState.points + 1 }));
         }
@@ -83,7 +87,7 @@ class Flashcards extends React.Component {
                     onAdd={(flashcard) => this.AddFlashcard(flashcard)}/>
 
                     <p className='points'>Points: {this.state.points}</p>
-
+                    {this.state.gameOver && <div className="gameOverMessage" ><h2>GAME OVER</h2></div>}
                 <div className='flashcardsContainer'>
                     {this.state.flashcards.map(flashcard => {
                        

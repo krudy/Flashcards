@@ -16,3 +16,13 @@ body {
     margin: 10px;
     
 }
+
+.gameOverMessage {
+    position: fixed; /* Pozycjonowanie na stałej pozycji */
+    top: 14%; /* Przesunięcie w pionie o połowę wysokości ekranu */
+    left: 50%; /* Przesunięcie w poziomie o połowę szerokości ekranu */
+    transform: translate(-50%, -50%); /* Wycentrowanie w pionie i poziomie */
+    font-size: 60px; /* Rozmiar czcionki */
+    color: rgb(122, 6, 6); /* Kolor tekstu */
+    z-index: 9999; /* Ustawienie na wierzchu */
+}
