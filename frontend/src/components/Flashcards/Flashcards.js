@@ -9,6 +9,9 @@ class Flashcards extends React.Component {
     constructor(props) {
         super(props);
 
+        //referance to next button
+        this.nextButtonRef = React.createRef(); 
+
         this.state = {
             
             flashcards: [],
@@ -52,6 +55,10 @@ class Flashcards extends React.Component {
 
     handleNextButton() {
         
+        if (this.state.game === 0 ) {
+            this.nextButtonRef.current.disabled = true;
+            return;
+        }
         this.setState({ flashcards: [] }); // Wyczyść istniejące fiszki z stanu
         this.fetchNotes(); // Pobierz nowe fiszki
         if(this.state.game === 2){
@@ -97,7 +104,7 @@ class Flashcards extends React.Component {
                     })}
 
                 </div>
-                <button onClick={() => this.handleNextButton()} className='Next'>NEXT</button>
+                <button ref={this.nextButtonRef} onClick={() => this.handleNextButton()} className='Next' >NEXT</button>
             </div>
         );
     }
