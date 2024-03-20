@@ -2,7 +2,7 @@ import React, {useState} from "react";
 
 function NewResult(props) {
 
-    const [showForm, setShowForm] = useState(false);
+    
     const [nickname, setNickname] = useState('');
     
 
@@ -21,14 +21,14 @@ function NewResult(props) {
         props.onAdd(result);
 
         setNickname('');
-        setShowForm(false);
+       
     }
 
     return (
-        showForm ? (
+        
         <div className = 'result'>
             <label>Your score</label>
-            <p>wynik</p>
+            <p>{props.points}</p>
             
             <label>Enter your nickname:</label>
             <input type = 'text' 
@@ -37,9 +37,7 @@ function NewResult(props) {
 
             <button onClick={() => addResult()} >Add Note</button>
         </div>
-        ) : ( 
-            <button onClick={() => {setShowForm(true)}}>New note</button>
-        )
+        
     );
 }
 

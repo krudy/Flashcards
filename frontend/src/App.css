@@ -44,7 +44,7 @@ input{
 }
 
 .content-container {
-  display: flex; /* Ustawienie kontenera na flexbox */
+  display: flex; 
 }
 
 @keyframes App-logo-spin {

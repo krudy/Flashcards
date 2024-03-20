@@ -23,7 +23,18 @@ class Results extends React.Component {
 
     async fetchLeaderboard() {
         const res = await axios.get('http://localhost:9999/api/results')
-        const results = res.data;
+        let results = res.data;
+
+        // Sorting in descending order by 'score' field
+        results.sort((a, b) => b.score - a.score);
+
+        // Filling empty fields
+        while (results.length < 10) {
+            results.push({ score: 0, nickname: "billy - a very weak player" });
+        }
+
+        // cut to 10 elements
+        results = results.slice(0, 10);
 
         this.setState({ results: results });
     }

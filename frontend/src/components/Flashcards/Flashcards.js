@@ -70,7 +70,6 @@ class Flashcards extends React.Component {
             
             console.log('wartosc winner' + isWinner);
             
-
        
         return results;
     }
@@ -141,7 +140,7 @@ render() {
             <button ref={this.nextButtonRef} onClick={() => this.handleNextButton()} className='Next' >NEXT</button>
 
             {/* Wyświetlamy komponent NewResult po zakończeniu gry */}
-            {this.state.isTheWinner && <NewResult />}
+            {this.state.isTheWinner && <NewResult points={this.state.points} />}
         </div>
     );
 }
