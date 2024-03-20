@@ -75,9 +75,7 @@ class Flashcards extends React.Component {
     }
 
     async saveResult(result) {
-        const res = await axios.post('http://localhost:9999/api/results', result);
-        const results = await this.checkIsTheWinner(res.data);
-        this.setState({ results: results });
+        await axios.post('http://localhost:9999/api/results', result);  
     }
 
 
@@ -140,7 +138,7 @@ render() {
             <button ref={this.nextButtonRef} onClick={() => this.handleNextButton()} className='Next' >NEXT</button>
 
             {/* Wyświetlamy komponent NewResult po zakończeniu gry */}
-            {this.state.isTheWinner && <NewResult points={this.state.points} />}
+            {this.state.isTheWinner && <NewResult points={this.state.points} onAdd={this.saveResult}/>}
         </div>
     );
 }

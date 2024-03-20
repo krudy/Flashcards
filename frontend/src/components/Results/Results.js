@@ -9,7 +9,7 @@ class Results extends React.Component {
 
         this.state = {
 
-            results: [],
+            results: []
 
         }
 
@@ -48,20 +48,19 @@ class Results extends React.Component {
 
         return (
             <div>
-                
+
 
                 {this.state.results.map(result => {
-
+                    console.log(result);
                     return (
-                        <Result
-                            key={result._id}
-                            id={result._id}
-                            nickname={result.nickname}
-                            score={result.score}
+                    <Result
+                        key={result._id}
+                        id={result._id}
+                        nickname={result.nickname}
+                        score={result.score}
+                    />
 
-                        />
-
-                    )
+                )
                 })}
             </div>
         );

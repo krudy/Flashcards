@@ -35,7 +35,7 @@ function NewResult(props) {
             value = {nickname}
             onChange = {changeNicknameHandler}/>
 
-            <button onClick={() => addResult()} >Add Note</button>
+            <button className="saveYourScore" onClick={() => addResult(props.points)} >Save Your score</button>
         </div>
         
     );
