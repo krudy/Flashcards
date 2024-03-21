@@ -1,3 +1,21 @@
+body{
+  background-color: rgb(29, 129, 245);
+}
+
+.app-Name{
+  color: white;
+  font-size: 42px;
+  text-align: center;
+  font-family: "Cooper";
+  font-weight: 500;
+  font-style: normal;
+
+}
+
+.app-Name-Flashcards {
+  color: #fcca46;
+}
+
 .App {
   text-align: center;
 }
@@ -12,6 +30,7 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+
 
 input{
   display: block;

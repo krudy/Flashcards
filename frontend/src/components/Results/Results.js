@@ -1,6 +1,7 @@
 import React from 'react';
 import Result from './Result/Result';
 import axios from 'axios';
+import './Results.css';
 
 class Results extends React.Component {
 
@@ -38,7 +39,7 @@ class Results extends React.Component {
         results = results.slice(0, 10);
 
         this.setState({ results: results });
-        
+
     }
 
 
@@ -49,21 +50,23 @@ class Results extends React.Component {
 
 
         return (
-            <div>
+            <div className='leader-Board'>
 
+                <h1 className='leaderboard-Header'>Leaderboard</h1>
 
-                {this.state.results.map(result => {
-                    
+                {this.state.results.map((result,index) => {
+
                     return (
-                    <Result
-                        key={result._id}
-                        id={result._id}
-                        nickname={result.nickname}
-                        score={result.score}
-                        scoreToBeat={result.scoreToBeat}
-                    />
+                        <Result
+                            key={result._id}
+                            id={result._id}
+                            nickname={result.nickname}
+                            score={result.score}
+                            scoreToBeat={result.scoreToBeat}
+                            index={index}
+                        />
 
-                )
+                    )
                 })}
             </div>
         );

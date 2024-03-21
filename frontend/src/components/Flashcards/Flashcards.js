@@ -38,10 +38,12 @@ class Flashcards extends React.Component {
         for (let i = 0; i < 2; i++) {
            const res = await axios.get('http://localhost:9999/api/flashcards/random');
            const card = res.data;
+           console.log(card);
             card.isCorrect = false;
             cards.push(card);
         }
-      
+        
+       
         this.setState({ flashcards: cards });
     }
 
@@ -119,9 +121,6 @@ render() {
 
     return (
         <div>
-
-            <h1>Flashcards</h1>
-
 
             <NewFlashcard
                 onAdd={(flashcard) => this.AddFlashcard(flashcard)} />
