@@ -1,0 +1,26 @@
+.add-new-card-button {
+    background-color: #fcca46;
+    font-family: Cooper, sans-serif; /* Wybierz czcionkę Copper */
+    font-size: 24px; /* Rozmiar czcionki */
+    color: white;
+    height: 100px;
+    width: 160px;
+    border-radius: 30px; /* Zaokrąglenie krawędzi, aby uzyskać kształt koła */
+    border: none; /* Usunięcie obramowania */
+    position: fixed; /* Ustawienie elementu na stałe względem okna przeglądarki */
+    top: 20px; /* Odległość od górnej krawędzi strony */
+    left: 20px; /* Odległość od lewej krawędzi strony */
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); /* Cień z prawej strony */
+  }
+
+  .new-flashcard { 
+    height: 500px;
+    width: 20%;
+    color: white;
+    font-size: 25px;
+    padding: 10px;
+    border: 5px solid white;
+    border-radius: 20px;
+    margin: 10px;
+    
+}

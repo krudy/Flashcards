@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import "./NewFlashcard.css";
 
 function  NewFlashcard(props) {
 
@@ -56,7 +57,7 @@ function  NewFlashcard(props) {
 
     return(
         showForm ? (
-        <div className="flashcard">
+        <div className="new-flashcard">
             <label>word in Polish</label>
             <input 
                 type="text"
@@ -96,7 +97,7 @@ function  NewFlashcard(props) {
             <button onClick={() => setShowForm(false)}>Cancel</button>
         </div>
         ) : (
-           <button onClick={() => setShowForm(true)}>Add your Flashcard</button> 
+           <button className="add-new-card-button" onClick={() => setShowForm(true)}>Add your Flashcard</button> 
         )
     );
 }

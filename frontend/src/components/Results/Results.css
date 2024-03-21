@@ -1,14 +1,12 @@
 .leader-Board {
- border: white solid 5px;
- border-radius: 40px;
-  margin-left: 20px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 40px;
-  padding-right: 40px;
- 
-
-}
+    border: white solid 5px;
+    border-radius: 40px;
+    padding: 10px 40px; /* Skrócona wersja paddingu */
+    position: fixed;
+    top: 50%; /* Możesz dostosować położenie pionowe */
+    transform: translateY(-50%); /* Centralizacja elementu względem pionu */
+    right: 20px;
+  }
 
 .leaderboard-Header {
   text-align: center;
@@ -23,6 +21,7 @@
     font-size: 20px;
     text-align: left;
     color: white;
+    
 }
 
 .result h1{
