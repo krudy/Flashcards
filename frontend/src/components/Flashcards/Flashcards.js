@@ -88,6 +88,7 @@ class Flashcards extends React.Component {
 
     async saveResult(result) {
         await axios.post('http://localhost:9999/api/results', result);  
+        window.location.reload();
     }
 
 
