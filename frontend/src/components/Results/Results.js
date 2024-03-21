@@ -9,7 +9,8 @@ class Results extends React.Component {
 
         this.state = {
 
-            results: []
+            results: [],
+            scoreToBeat: 0,
 
         }
 
@@ -37,6 +38,7 @@ class Results extends React.Component {
         results = results.slice(0, 10);
 
         this.setState({ results: results });
+        
     }
 
 
@@ -51,13 +53,14 @@ class Results extends React.Component {
 
 
                 {this.state.results.map(result => {
-                    console.log(result);
+                    
                     return (
                     <Result
                         key={result._id}
                         id={result._id}
                         nickname={result.nickname}
                         score={result.score}
+                        scoreToBeat={result.scoreToBeat}
                     />
 
                 )

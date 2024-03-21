@@ -32,19 +32,21 @@ class Flashcards extends React.Component {
         this.fetchNotes();
     }
 
+    // getting two random flashcards to display
     async fetchNotes() {
         const cards = [];
         for (let i = 0; i < 2; i++) {
-            const res = await axios.get('http://localhost:9999/api/flashcards/random');
-            const card = res.data;
+           const res = await axios.get('http://localhost:9999/api/flashcards/random');
+           const card = res.data;
             card.isCorrect = false;
             cards.push(card);
         }
+      
         this.setState({ flashcards: cards });
     }
 
 
-
+    //addin points to sattes - points and game
     CheckFlashcard(isCorrect) {
         if (isCorrect) {
             this.setState(prevState => ({ points: prevState.points + 1 }));
@@ -54,6 +56,7 @@ class Flashcards extends React.Component {
 
     }
 
+    //post new flashcard
     async AddFlashcard(flashcard) {
         await axios.post('http://localhost:9999/api/flashcards', flashcard);
     }
@@ -61,16 +64,25 @@ class Flashcards extends React.Component {
     async checkIsTheWinner(points) {
         const res = await axios.get('http://localhost:9999/api/results');
         const results = res.data;
-        console.log(results);
-  
-        const isWinner = results.some(result => points > result.score);
-        if(isWinner){
-            this.setState({isTheWinner: true})
+    
+        let isWinner = false;
+    
+        // Checking whether the number of points is greater than the score of the top 10 players
+        if (results.length >= 10) {
+            const topTenScores = results.slice(0, 10).map(result => result.score);
+            const minTopTenScore = Math.min(...topTenScores);
+            if (points > minTopTenScore) {
+                isWinner = true;
+            }
+        } else {
+            // set a player as the winner if there are not 10 results in the database
+            isWinner = true;
         }
-            
-            console.log('wartosc winner' + isWinner);
-            
-       
+    
+        if (isWinner) {
+            this.setState({ isTheWinner: true });
+        }
+    
         return results;
     }
 
