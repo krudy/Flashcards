@@ -120,12 +120,12 @@ render() {
 
 
     return (
-        <div>
+        <div className='app-container'>
 
             <NewFlashcard
                 onAdd={(flashcard) => this.AddFlashcard(flashcard)} />
 
-            <p className='points'>Points: {this.state.points}</p>
+            <p className='points'>Your Score<br/>{this.state.points}</p>
             {this.state.gameOver && <div className="gameOverMessage" ><h2>GAME OVER</h2></div>}
             <div className='flashcardsContainer'>
                 {this.state.flashcards.map(flashcard => {

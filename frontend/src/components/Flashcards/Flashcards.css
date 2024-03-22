@@ -26,3 +26,24 @@ body {
     color: rgb(122, 6, 6); /* Kolor tekstu */
    
 }
+
+.points {
+    font-family: "Cooper";
+    font-weight: 500;
+    font-size: 36px;
+    text-align: center;
+    color: #fcca46;
+    position: absolute;
+    top: 20px; 
+    right: 100px; 
+}
+
+.app-container {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
