@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./Flashcard.css"
 
 function Flashcard(props) {
 
@@ -38,7 +39,7 @@ function Flashcard(props) {
                 value={inputText}
                 onChange={handleInputChange}></input>
             <button
-                className='Check'
+                className='check-btn'
                 onClick={toggleTranslation}
                 disabled={!isCheckButtonEnabled}>Check</button>
         </div>

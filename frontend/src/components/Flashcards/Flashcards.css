@@ -39,11 +39,26 @@ body {
 }
 
 .app-container {
-    
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     font-size: calc(10px + 2vmin);
     color: white;
+}
+
+.next-btn {
+    background-color: #fcca46;
+    font-family: Cooper, sans-serif; /* Wybierz czcionkę Copper */
+    font-size: 32px; /* Rozmiar czcionki */
+    color: white;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 30px; /* Zaokrąglenie krawędzi, aby uzyskać kształt koła */
+    border: none; /* Usunięcie obramowania */
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); /* Cień z prawej strony */
+}
+
+.next-btn:hover{
+    background-color: #e3b200;
 }

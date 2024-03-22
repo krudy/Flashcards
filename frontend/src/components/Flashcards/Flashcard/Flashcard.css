@@ -1,0 +1,19 @@
+.check-btn {
+  background-color: white;
+  font-family: Cooper, sans-serif; /* Wybierz czcionkę Copper */
+  font-size: 24px; /* Rozmiar czcionki */
+  color: rgb(29, 129, 245);
+  padding: 15px;
+  margin-top: 20px;
+  border-radius: 30px; /* Zaokrąglenie krawędzi, aby uzyskać kształt koła */
+  border: none; /* Usunięcie obramowania */
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); /* Cień z prawej strony */
+}
+
+.check-btn:disabled {
+    color: rgb(179, 212, 255); /* Jaśniejszy kolor tekstu po kliknięciu */
+  }
+  
+.check-btn:not([disabled]):hover {
+    background-color: #d9d9d9;
+}

@@ -13,6 +13,10 @@
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); /* Cień z prawej strony */
   }
 
+  .add-new-card-button:hover {
+    background-color: #e3b200;
+  }
+
   .new-flashcard { 
     height: 500px;
     width: 20%;

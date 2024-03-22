@@ -147,7 +147,7 @@ render() {
                 })}
 
             </div>
-            <button ref={this.nextButtonRef} onClick={() => this.handleNextButton()} className='Next' >NEXT</button>
+            <button ref={this.nextButtonRef} onClick={() => this.handleNextButton()} className='next-btn' >NEXT</button>
 
             {/* Wyświetlamy komponent NewResult po zakończeniu gry */}
             {this.state.isTheWinner && <NewResult points={this.state.points} onAdd={this.saveResult}/>}
