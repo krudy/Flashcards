@@ -20,13 +20,6 @@ body {
     
 }
 
-.gameOverMessage {
-   
-    font-size: 32px; /* Rozmiar czcionki */
-    color: rgb(122, 6, 6); /* Kolor tekstu */
-   
-}
-
 .points {
     font-family: "Cooper";
     font-weight: 500;

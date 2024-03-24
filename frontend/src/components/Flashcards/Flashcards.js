@@ -126,7 +126,10 @@ render() {
                 onAdd={(flashcard) => this.AddFlashcard(flashcard)} />
 
             <p className='points'>Your Score<br/>{this.state.points}</p>
-            {this.state.gameOver && <div className="gameOverMessage" ><h2>GAME OVER</h2></div>}
+            {/* Wyświetlamy komponent NewResult po zakończeniu gry */}
+            {this.state.isTheWinner && <NewResult points={this.state.points} onAdd={this.saveResult}/>}
+        
+           
             <div className='flashcardsContainer'>
                 {this.state.flashcards.map(flashcard => {
 
@@ -149,8 +152,7 @@ render() {
             </div>
             <button ref={this.nextButtonRef} onClick={() => this.handleNextButton()} className='next-btn' >NEXT</button>
 
-            {/* Wyświetlamy komponent NewResult po zakończeniu gry */}
-            {this.state.isTheWinner && <NewResult points={this.state.points} onAdd={this.saveResult}/>}
+            
         </div>
     );
 }
