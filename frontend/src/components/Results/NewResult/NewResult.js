@@ -27,6 +27,7 @@ function NewResult(props) {
 
     return (
         <div className="overlay">
+            <h1 className="game-over">GAME OVER</h1>
             <div className='player-result'>
                 <label >Your score</label>
                 <p className="score">{props.points}</p>

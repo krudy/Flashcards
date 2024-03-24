@@ -4,14 +4,14 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgb(29, 129, 245, 0.9); /* Przezroczyste czarne tło */
+  background-color: rgb(29, 129, 245, 0.95); /* Przezroczyste czarne tło */
   z-index: 5999; /* Ustawienie z-index na wysoką wartość, aby tło znajdowało się na wierzchu */
 }
 
 .player-result {
   position: relative; /* Konieczne, aby móc ustawić z-index na wierzchu */
   position: fixed;
-  top: 30%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 6000; /* Ustawienie z-index na wyższą wartość niż tło */
@@ -57,3 +57,13 @@
     font-size: 32px;
     border-radius: 15px;
 }
+
+.game-over{
+    color: rgba(255, 0, 0, 0.694);
+    font-size: 72px;
+    text-align: center;
+    font-family: "Cooper";
+    font-weight: 500;
+    font-style: normal;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Dodanie cienia */
+  }
