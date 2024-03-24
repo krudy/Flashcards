@@ -57,7 +57,7 @@ function  NewFlashcard(props) {
 
     return(
         showForm ? (
-        <div className="new-flashcard">
+        <div className="new-flashcard-form">
             <label>word in Polish</label>
             <input 
                 type="text"
@@ -79,25 +79,26 @@ function  NewFlashcard(props) {
                 onChange={changeTypehandler}
             ></input>
             <br/>
-            <label>Example use in a Polish sentence</label>
+            <label>Example use in a Polish</label>
             <input 
                 type="text"
                 value={polishExample}
                 onChange={changePolishExamplehandler}
             ></input>
             <br/>
-            <label>Example use in a English sentence</label>
+            <label>Example use in a English</label>
             <input 
                 type="text"
                 value={englishExample}
                 onChange={changeEnglishExamplehandler}
             ></input>
 
-            <button onClick={AddFlashcard}>Add this flashcard</button>
-            <button onClick={() => setShowForm(false)}>Cancel</button>
+            <button className="add-flashcard-btn" onClick={AddFlashcard}>Add Flashcard</button>
+            <br/>
+            <button className="cancel-btn" onClick={() => setShowForm(false)}>Cancel</button>
         </div>
         ) : (
-           <button className="add-new-card-button" onClick={() => setShowForm(true)}>Add your Flashcard</button> 
+           <button className="add-new-card-button" onClick={() => setShowForm(true)}>Add New Flashcard</button> 
         )
     );
 }
