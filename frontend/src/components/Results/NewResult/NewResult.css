@@ -23,6 +23,7 @@
   font-size: 36px;
   text-align: center;
   color: #fcca46;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 .player-result input {
@@ -39,6 +40,7 @@
   border-radius: 30px; /* Zaokrąglenie krawędzi, aby uzyskać kształt koła */
   border: none; /* Usunięcie obramowania */
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); /* Cień z prawej strony */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 .save-score-btn:hover {
@@ -51,6 +53,7 @@
   font-size: 42px;
   text-align: center;
   color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 .player-result input {

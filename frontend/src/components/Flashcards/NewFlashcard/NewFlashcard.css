@@ -11,6 +11,7 @@
   top: 20px; /* Odległość od górnej krawędzi strony */
   left: 20px; /* Odległość od lewej krawędzi strony */
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); /* Cień z prawej strony */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 .add-new-card-button:hover {
@@ -42,6 +43,7 @@
   border-radius: 30px; /* Zaokrąglenie krawędzi, aby uzyskać kształt koła */
   border: none; /* Usunięcie obramowania */
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); /* Cień z prawej strony */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 .add-flashcard-btn:hover {
@@ -57,6 +59,7 @@
   border-radius: 30px; /* Zaokrąglenie krawędzi, aby uzyskać kształt koła */
   border: none; /* Usunięcie obramowania */
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); /* Cień z prawej strony */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 .cancel-btn:hover {

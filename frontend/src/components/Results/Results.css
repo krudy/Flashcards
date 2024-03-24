@@ -15,6 +15,7 @@
   font-weight: 500;
   font-style: normal;
   color: #fcca46;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 .result p{
@@ -36,4 +37,5 @@
     font-size: 25px;
     text-align: left;
     color: #fcca46; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }

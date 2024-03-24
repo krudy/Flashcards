@@ -29,6 +29,8 @@ body {
     position: absolute;
     top: 20px; 
     right: 100px; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 .app-container {
@@ -50,6 +52,7 @@ body {
     border-radius: 30px; /* Zaokrąglenie krawędzi, aby uzyskać kształt koła */
     border: none; /* Usunięcie obramowania */
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); /* Cień z prawej strony */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 .next-btn:hover{
