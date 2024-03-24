@@ -19,12 +19,10 @@ class ResultActions {
             return res.status(422).json({message: err.message});
         };
         
-
-
         res.status(200).json(newResult);
     }
 
-    // getting all notes
+    // getting all results
     async getAllResults(req, res) {
 
         let results;
@@ -38,14 +36,14 @@ class ResultActions {
         res.status(201).json(results);
     }
 
-    // getting a single note
+    // getting a single result
     async getResult(req, res) {
         const id = req.params.id;
         const result = await Result.findOne({_id: id}); 
         res.status(200).json(result);
     }
 
-    // deleting a single note
+    // deleting a single result
     async deleteResult(req, res) {
         const id = req.params.id;
         await Result.deleteOne({_id: id});
