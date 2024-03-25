@@ -8,7 +8,19 @@ nie zna żadnego ze słów gra się kończy, a gracz (jeśli uzyskane punkty na 
     Projekt nie zawiera bazy słówek ,jednak daje możliwość tworzenia własnych przez użytkownika za pomocą wielkiego żółtego przycisku w lewym górnym 
 rogu. <br>   
 
+## UŻYTE TECHNOLOGIE 
 
+
+
+1. BACKEND:
+    -  napisany w Node.js ,wykorzystuje express jako framework do obsługi żądań HTTP.
+    -  wykorzystuje bazę danych MongoDB do przechowywania fiszek oraz wynikow graczy
+    -  udostępnia API ,które pozwala na operacje CRUD
+
+2. FRONTEND:
+    -  zbudowany przy użyciu React.js 
+    -  UI wyświetlany w przeglądarce internetowej.
+    -  komunikacja z backendem za pomocą zapytań HTTP
 
 
 
