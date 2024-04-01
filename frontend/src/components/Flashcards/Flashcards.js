@@ -30,20 +30,27 @@ class Flashcards extends React.Component {
 
     componentDidMount() {
         this.fetchNotes();
+        console.log(this.state.flashcards);
+
     }
 
     // getting two random flashcards to display
     async fetchNotes() {
         const cards = [];
         for (let i = 0; i < 2; i++) {
-           const res = await axios.get('http://localhost:9999/api/flashcards/random');
-           const card = res.data;
-           console.log(card);
-            card.isCorrect = false;
-            cards.push(card);
+           try {
+               const res = await axios.get('http://localhost:9999/api/flashcards/random');
+               const card = res.data;
+               card.isCorrect = false;
+               cards.push(card);
+           } catch (error) {
+               console.error("Error fetching flashcard:", error);
+               // Obsłuż błąd - ponowne próbowanie pobrania lub inna akcja
+               // np. zwiększenie liczby prób pobrania, jeśli to wymagane
+               i--; // Spowoduje, że pętla spróbuje ponownie pobrać flashcard
+           }
         }
-        
-       
+        console.log(cards);
         this.setState({ flashcards: cards });
     }
 
@@ -131,11 +138,11 @@ render() {
         
            
             <div className='flashcardsContainer'>
-                {this.state.flashcards.map(flashcard => {
+                {this.state.flashcards.map((flashcard, index) => {
 
                     return (
                         <Flashcard
-                            key={flashcard._id}
+                            key={index}
                             id={flashcard._id}
                             polishWord={flashcard.polishWord}
                             englishWord={flashcard.englishWord}
