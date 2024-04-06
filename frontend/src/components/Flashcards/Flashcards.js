@@ -30,7 +30,7 @@ class Flashcards extends React.Component {
 
     componentDidMount() {
         this.fetchNotes();
-        console.log(this.state.flashcards);
+        
 
     }
 
@@ -44,10 +44,8 @@ class Flashcards extends React.Component {
                card.isCorrect = false;
                cards.push(card);
            } catch (error) {
-               console.error("Error fetching flashcard:", error);
-               // Obsłuż błąd - ponowne próbowanie pobrania lub inna akcja
-               // np. zwiększenie liczby prób pobrania, jeśli to wymagane
-               i--; // Spowoduje, że pętla spróbuje ponownie pobrać flashcard
+               console.error("Error fetching flashcard:", error);      
+               i--; 
            }
         }
         console.log(cards);

@@ -1,6 +1,6 @@
 # **FLASHCARDS THE GAME APP**
 
-An application for learning English with the help of the well-known flashcards. The user is the player who defeats successive vocabulary cards. Each round the player is shown two random cards. If the player guesses one card, he/she receives one point, if he/she guesses two cards, he/she receives three points, if he/she does not know any of the words, the game ends. If the player does not know any of the words, the game ends and the player (if the points obtained allow it) has the opportunity to write himself on the scoreboard. The project does not include a vocabulary database, but allows the user to create their own vocabulary using the big yellow button in the top left corner. 
+An application for learning English with the help of the well-known flashcards. The user is the player who defeats successive vocabulary cards. Each round the player is shown two random cards. If the player guesses one card, he/she receives one point, if he/she guesses two cards, he/she receives three points. If the player does not know any of the words, the game ends and the player (if the points obtained allow it) has the opportunity to write himself on the scoreboard. The project does not include a vocabulary database, but allows the user to create their own vocabulary using the big yellow button in the top left corner. 
 
 ---
 
@@ -36,4 +36,4 @@ Before working with the project, we need to download the required libraries. In 
 Then, in the main directory of the project, run the `index.js` file with the command: `node backend/index.js` <br>
 You should receive a message in the console saying that the server is listening on port 9999
 
-To run the frontend, open a new terminal and enter the `./frontend` directory. There, enter the command: `npm start`
+To run the frontend, open a new terminal and enter the `./frontend` directory. There, enter the command: `npm run start`
